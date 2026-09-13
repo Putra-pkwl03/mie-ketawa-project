@@ -11,6 +11,8 @@
 
     @vite('resources/css/app.css')
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 {{-- <style>
   * {
     outline: 1px solid rgba(255,0,0,.2);
