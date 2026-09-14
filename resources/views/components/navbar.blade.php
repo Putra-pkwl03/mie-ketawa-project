@@ -28,21 +28,29 @@
                 <a href="{{ route('landing') }}#hubungiKami" class="nav-link text-gray-700 hover:text-green-700 font-medium transition" data-section="hubungiKami">Hubungi Kami</a>
             </div>
 
-            <!-- WhatsApp Desktop -->
-            <div class="relative hidden lg:block">
-                <img src="/assets/img/Group-21.png" class="w-10 h-10">
+            <!-- WhatsApp Desktop (Diubah ke tag <a>) -->
+            <a href="https://api.whatsapp.com/send?phone=6285178165746&text=Halo%20Admin%20Mie%20Ketawa,%20saya%20mau%20pesan%20mie%20sehatnya.%0A%0A*Format%20Pemesanan*%0A-%20Nama:%20%0A-%20Jumlah%20Pesanan:%20%0A-%20Varian:%20%0A-%20Alamat%20Pengiriman:%20" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onclick="window.open(this.href, '_blank'); return false;"
+                class="relative hidden lg:block cursor-pointer z-50 pointer-events-auto transition transform hover:scale-110">
+                <img src="/assets/img/Group-21.png" class="w-10 h-10 object-contain pointer-events-none">
                 <span class="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-0.5">2</span>
-            </div>
+            </a>
 
-            <!-- WhatsApp Tablet -->
-            <div class="relative hidden md:block lg:hidden">
-                <img src="/assets/img/Group-21.png" class="w-9 h-9">
+            <!-- WhatsApp Tablet (Diubah ke tag <a>) -->
+            <a href="https://api.whatsapp.com/send?phone=6285178165746&text=Halo%20Admin%20Mie%20Ketawa,%20saya%20mau%20pesan%20mie%20sehatnya.%0A%0A*Format%20Pemesanan*%0A-%20Nama:%20%0A-%20Jumlah%20Pesanan:%20%0A-%20Varian:%20%0A-%20Alamat%20Pengiriman:%20" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onclick="window.open(this.href, '_blank'); return false;"
+                class="relative hidden md:block lg:hidden cursor-pointer z-50 pointer-events-auto transition transform hover:scale-110">
+                <img src="/assets/img/Group-21.png" class="w-9 h-9 object-contain pointer-events-none">
                 <span class="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-0.5">2</span>
-            </div>
+            </a>
 
             <!-- Hamburger -->
-            <button id="menu-btn" class="lg:hidden text-green-800 focus:outline-none focus:ring-2 focus:ring-green-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="menu-btn" class="lg:hidden text-green-800 focus:outline-none focus:ring-2 focus:ring-green-800 cursor-pointer relative z-50 pointer-events-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
@@ -60,28 +68,41 @@
         
         <a href="{{ route('landing') }}#faq" class="nav-link block text-gray-700 hover:text-green-800 font-medium transition" data-section="faq">FAQ</a>
         <a href="{{ route('landing') }}#hubungiKami" class="nav-link block text-gray-700 hover:text-green-800 font-medium transition" data-section="hubungiKami">Hubungi Kami</a>
+        
+        <!-- Link WhatsApp Mobile (Tambahan khusus tampilan HP) -->
+        <a href="https://api.whatsapp.com/send?phone=6285178165746&text=Halo%20Admin%20Mie%20Ketawa,%20saya%20mau%20pesan%20mie%20sehatnya.%0A%0A*Format%20Pemesanan*%0A-%20Nama:%20%0A-%20Jumlah%20Pesanan:%20%0A-%20Varian:%20%0A-%20Alamat%20Pengiriman:%20" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onclick="window.open(this.href, '_blank'); return false;"
+            class="flex items-center gap-2 text-green-700 font-bold pt-2 border-t border-gray-100">
+            <img src="/assets/img/Group-21.png" class="w-6 h-6 object-contain">
+            <span>Pesan via WhatsApp</span>
+        </a>
     </div>
 </nav>
 
 <script>
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-    menuBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); 
-        mobileMenu.classList.toggle("hidden");
-    });
-
-    document.querySelectorAll("#mobile-menu a").forEach(link => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
+    
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); 
+            mobileMenu.classList.toggle("hidden");
         });
-    });
 
-    document.addEventListener("click", (e) => {
-        if (!mobileMenu.classList.contains("hidden") && !mobileMenu.contains(e.target) && e.target !== menuBtn) {
-            mobileMenu.classList.add("hidden");
-        }
-    });
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!mobileMenu.classList.contains("hidden") && !mobileMenu.contains(e.target) && e.target !== menuBtn) {
+                mobileMenu.classList.add("hidden");
+            }
+        });
+    }
 </script>
 
 <script>
