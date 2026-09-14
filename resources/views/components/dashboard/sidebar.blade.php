@@ -5,7 +5,7 @@
         <div class="flex items-center justify-between mb-10">
             <div class="flex items-center gap-3">
                 <!-- Logo Image Asset -->
-                <img src="{{ asset('assets/img/logo-mie-ketawa-transparant.png') }}" 
+                <img src="{{ asset('assets/img/LOGO-MIE-KETAWA-TRANSPARANT.png') }}" 
                      alt="Logo Mie Ketawa" 
                      class="w-12 h-12 object-contain flex-shrink-0">
                 <div>
