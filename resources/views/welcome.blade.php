@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mie Ketawa Landing Page</title>
+    <title>Mie Ketawa</title>
 
     <!-- Favicon / Logo Tab Browser -->
     <link rel="icon" type="image/png" href="{{ asset('assets/img/LOGO-MIE-KETAWA-TRANSPARANT.png') }}">

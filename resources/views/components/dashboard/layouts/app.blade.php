@@ -176,7 +176,7 @@
                         Batal
                     </button>
                     <button type="submit" 
-                            class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-100 transition">
+                            class="w-full py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold text-xs rounded-xl shadow-lg shadow-green-100 transition">
                         Simpan Perubahan
                     </button>
                 </div>
